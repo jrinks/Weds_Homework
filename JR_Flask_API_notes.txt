@@ -1,0 +1,12 @@
+python -m venv venv
+pip install -r requirements.txt
+make a .env  
+make a new empty database on elephantsql
+put the url in your .env along with other stuff: 
+    FLASK_APP=run.py
+    FLASK_ENV=development
+run: flask db init //this creates your migrations folder
+run: flask db migrate 
+run: flask db upgrade //this will look for any models you've defined and will create them
+
+Flask run
