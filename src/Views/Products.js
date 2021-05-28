@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+
+
 export default class Products extends Component {
     constructor() {
         console.log('products constructed');
@@ -14,17 +16,22 @@ export default class Products extends Component {
     };
 
     
-    componentDidMount(){
-        fetch('localhost:5000/api/products')
+    componentDidMount(){ 
+        fetch('http://localhost:5000/api/products')
         .then(res => res.json())
         .then(data => {
             this.setState(
                 {products: data}
              )
+            console.log(data)
 
         }
-        )   
+        )
+        console.log("product did mount")   
     }
+
+
+
 
     render(){
         const products = this.state.products;
@@ -43,13 +50,13 @@ export default class Products extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {products.map((product) => (
-                            <tr key={product.id}>
-                                <td>{product.id}</td>
-                                <td>{product.name}</td>
-                                <td>{product.description}</td>
-                                <td>{product.price}</td>
-                                <td>{product.image}</td>
+                        {products.map((products) => (
+                            <tr key={products.id}>
+                                
+                                <td>{products.name}</td>
+                                <td>{products.description}</td>
+                                <td>${products.price}</td>
+                                <td><img src={products.image} width='20%' ></img></td>
                             </tr>
                         ))}
                     </tbody>

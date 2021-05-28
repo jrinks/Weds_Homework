@@ -7,7 +7,7 @@ npx is a package used to execute pacakges
 
 npx create-react-app intro-to-react
 
-once your project is created, cd into the folder and type "npom start"
+once your project is created, cd into the folder and type "npm start"
 
 package-lock.json is like your requirements folder in flask
 package.json is like 

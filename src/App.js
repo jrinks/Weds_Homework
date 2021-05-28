@@ -13,8 +13,8 @@ export default class App extends Component {
     this.state = {
       name: "Jessica's React Project",
       racers: [],
-      kekambas: [],
-      products: []
+      kekambas: []
+     
     }
   }
 
